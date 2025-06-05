@@ -1,0 +1,14 @@
+[
+  {
+    "id": "task1",
+    "context": "Alice is kind. Kind people are helpful.",
+    "question": "Is Alice helpful?",
+    "answer": "A"
+  },
+  {
+    "id": "task2",
+    "context": "A cheetah runs faster than a deer. A deer runs faster than a turtle.",
+    "question": "Which animal is the fastest?",
+    "answer": "A"
+  }
+]

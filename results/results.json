@@ -1,0 +1,14 @@
+[
+  {
+    "id": "task1",
+    "question": "Is Alice helpful?",
+    "predicted": "A",
+    "answer": "A"
+  },
+  {
+    "id": "task2",
+    "question": "Which animal is the fastest?",
+    "predicted": "Options:\n1. Cheetah\n2. Deer\n3. Turtle\n\nThe correct answer is: Cheetah.",
+    "answer": "A"
+  }
+]
