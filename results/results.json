@@ -8,7 +8,7 @@
   {
     "id": "task2",
     "question": "Which animal is the fastest?",
-    "predicted": "Options:\n1. Cheetah\n2. Deer\n3. Turtle\n\nThe correct answer is: Cheetah.",
+    "predicted": "Ranking: \n1. Cheetah\n2. Deer\n3. Turtle\n\nThe correct answer is: Cheetah.",
     "answer": "A"
   }
 ]
