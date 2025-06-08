@@ -1,14 +1,18 @@
 [
   {
     "id": "task1",
-    "question": "Is Alice helpful?",
+    "original_question": "Is Alice helpful?",
+    "final_question_used": "Is Alice helpful?",
+    "classification": "logic",
     "predicted": "A",
     "answer": "A"
   },
   {
     "id": "task2",
-    "question": "Which animal is the fastest?",
-    "predicted": "Ranking: \n1. Cheetah\n2. Deer\n3. Turtle\n\nThe correct answer is: Cheetah.",
+    "original_question": "Which animal is the fastest?",
+    "final_question_used": "Which animal is the fastest?",
+    "classification": "ranking",
+    "predicted": "Ranking:\n1. Cheetah\n2. Deer\n3. Turtle\n\nThe correct answer is Cheetah.",
     "answer": "A"
   }
 ]

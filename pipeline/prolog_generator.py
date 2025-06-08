@@ -1,19 +1,33 @@
 import openai
 import os
+import re
 
-def generate_prolog_facts(context):
-    prompt = f"""Convert the following context into Prolog facts and rules.
-Use these exact predicate names:
-- kind(X) for statements about someone being kind
-- helpful(X) for statements about someone being helpful
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-Context:
-{context}
+def clean_prolog(text: str) -> str:
+    lines = text.splitlines()
+    out = []
+    for l in lines:
+        l = l.strip().strip("`")  # drop backticks
+        if not l or l.startswith('%'):  # skip empties/comments
+            continue
+        if not l.endswith('.'):
+            l += '.'
+        out.append(l)
+    return "\n".join(out)
 
-Give only the Prolog code:
-"""
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[{"role": "user", "content": prompt}]
+def generate_prolog_facts(context: str) -> str:
+    prompt = (
+        "Convert the following context into Prolog facts and rules.\n\n"
+        "Only output Prolog clauses (lowercase predicates), one per line.\n"
+        "Don't include any natural language or explanation.\n\n"
+        "Context:\n"
+        f"{context}\n"
     )
-    return response["choices"][0]["message"]["content"]
+    resp = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}],
+    )
+    raw = resp["choices"][0]["message"]["content"]
+    return clean_prolog(raw)
+
